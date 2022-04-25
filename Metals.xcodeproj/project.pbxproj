@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F55133AA2817358700F2DEE5 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55133A92817358700F2DEE5 /* game.swift */; };
 		F56E3B592815A699001C8C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E3B582815A699001C8C50 /* AppDelegate.swift */; };
 		F56E3B5B2815A699001C8C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E3B5A2815A699001C8C50 /* SceneDelegate.swift */; };
 		F56E3B5D2815A699001C8C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E3B5C2815A699001C8C50 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F55133A92817358700F2DEE5 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		F56E3B552815A699001C8C50 /* Metals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56E3B582815A699001C8C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56E3B5A2815A699001C8C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				F56E3B582815A699001C8C50 /* AppDelegate.swift */,
+				F56E3B612815A69A001C8C50 /* Assets.xcassets */,
+				F55133A92817358700F2DEE5 /* game.swift */,
+				F56E3B662815A69A001C8C50 /* Info.plist */,
+				F56E3B632815A69A001C8C50 /* LaunchScreen.storyboard */,
+				F56E3B5E2815A699001C8C50 /* Main.storyboard */,
 				F56E3B5A2815A699001C8C50 /* SceneDelegate.swift */,
 				F56E3B5C2815A699001C8C50 /* ViewController.swift */,
-				F56E3B5E2815A699001C8C50 /* Main.storyboard */,
-				F56E3B612815A69A001C8C50 /* Assets.xcassets */,
-				F56E3B632815A69A001C8C50 /* LaunchScreen.storyboard */,
-				F56E3B662815A69A001C8C50 /* Info.plist */,
 			);
 			path = Metals;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				F56E3B5D2815A699001C8C50 /* ViewController.swift in Sources */,
 				F56E3B592815A699001C8C50 /* AppDelegate.swift in Sources */,
 				F56E3B5B2815A699001C8C50 /* SceneDelegate.swift in Sources */,
+				F55133AA2817358700F2DEE5 /* game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
