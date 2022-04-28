@@ -82,13 +82,24 @@ class ViewController: UIViewController {
         currentGame = Game(word: newWord!, inCorrectMovesRemaining: inCorrectMovesAllowed)
         updateUi()
     }
+    ///underscore separator in the hidden word (разделитель нижнего подчеркивания в загаданом слове )
+    func updateCorrectWordLabel() {
+        var displayWord = [String]()
+        for letter in currentGame.guessedWord{
+            displayWord.append(String (letter))
+        }
+        corectWordLabel.text = displayWord.joined(separator: " ")
+    }
+    
     
     /// updating ImageView with button click (обновление ImageView с нажатием кнопки )
     func updateUi(){
         let movesRemaining = currentGame.inCorrectMovesRemaining
-        let image = "lamp\(movesRemaining < 8 ? movesRemaining: 7)"
-        lampsImageView.image = UIImage(named: image)
-         
+        let imageNumber = (movesRemaining + 64) % 8
+        let image = "lamp\(imageNumber)"
+               lampsImageView.image = UIImage(named: image)
+        updateCorrectWordLabel()
+        statusGameLabel.text = "Выигрыши: \(totalsWins), Проигрыши: \(totallosses)"
     }
     
     override func viewDidLoad() {
@@ -99,6 +110,9 @@ class ViewController: UIViewController {
     
     @IBAction func letterButtonsPressed(_ sender: UIButton) {
         sender.isEnabled = false
+       let letter = sender.title(for: .normal)!
+        currentGame.playerGuessed(letter: Character(letter))
+        updateUi() 
     }
     
 }
