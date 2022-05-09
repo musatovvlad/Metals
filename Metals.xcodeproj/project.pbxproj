@@ -16,6 +16,7 @@
 		F56E3B652815A69A001C8C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56E3B632815A69A001C8C50 /* LaunchScreen.storyboard */; };
 		F56E9274282929E7003806CD /* screen 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F56E9272282929E7003806CD /* screen 2.png */; };
 		F56E9275282929E7003806CD /* screen 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F56E9273282929E7003806CD /* screen 1.png */; };
+		F56E927828293CD7003806CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F56E927728293CD7003806CD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F56E3B662815A69A001C8C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56E9272282929E7003806CD /* screen 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen 2.png"; sourceTree = "<group>"; };
 		F56E9273282929E7003806CD /* screen 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen 1.png"; sourceTree = "<group>"; };
+		F56E927728293CD7003806CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		F56E3B4C2815A698001C8C50 = {
 			isa = PBXGroup;
 			children = (
+				F56E927728293CD7003806CD /* README.md */,
 				F56E3B572815A699001C8C50 /* Metals */,
 				F56E3B562815A699001C8C50 /* Products */,
 			);
@@ -62,7 +65,6 @@
 		F56E3B572815A699001C8C50 /* Metals */ = {
 			isa = PBXGroup;
 			children = (
-				F56E9276282936E4003806CD /* README.md */,
 				F56E927128292968003806CD /* screen */,
 				F56E3B582815A699001C8C50 /* AppDelegate.swift */,
 				F56E3B612815A69A001C8C50 /* Assets.xcassets */,
@@ -83,13 +85,6 @@
 				F56E9272282929E7003806CD /* screen 2.png */,
 			);
 			path = screen;
-			sourceTree = "<group>";
-		};
-		F56E9276282936E4003806CD /* README.md */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = README.md;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56E927828293CD7003806CD /* README.md in Resources */,
 				F56E9275282929E7003806CD /* screen 1.png in Resources */,
 				F56E3B652815A69A001C8C50 /* LaunchScreen.storyboard in Resources */,
 				F56E9274282929E7003806CD /* screen 2.png in Resources */,
