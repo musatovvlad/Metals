@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController {
-     
+    
     // MARC: IB - Outlet
     @IBOutlet weak var lampsImageView: UIImageView!
     @IBOutlet var letterButtons: [UIButton]!
@@ -71,18 +71,34 @@ class ViewController: UIViewController {
     ]
     
     /// win counter
-    let totalsWins = 0
+    var totalsWins = 0{
+        didSet{
+            newRound()
+        }
+    }
     
     /// loss counter
-    let totallosses = 0
+    var totallosses = 0{
+        didSet{
+            newRound()
+        }
+    }
     
     //MARK:  - Methods
+    func enableButton () {
+        for button in letterButtons {
+            button.isEnabled = true
+        }
+    }
+    
+    
     func newRound(){
         let newWord = listOfWords.randomElement()
         currentGame = Game(word: newWord!, inCorrectMovesRemaining: inCorrectMovesAllowed)
         updateUi()
+        enableButton()
     }
-    ///underscore separator in the hidden word (разделитель нижнего подчеркивания в загаданом слове )
+    ///underscore separator in the hidden word (разделитель нижнего подчеркивания в загаданном слове )
     func updateCorrectWordLabel() {
         var displayWord = [String]()
         for letter in currentGame.guessedWord{
@@ -90,29 +106,39 @@ class ViewController: UIViewController {
         }
         corectWordLabel.text = displayWord.joined(separator: " ")
     }
-    
+    func updateState (){
+        if currentGame.inCorrectMovesRemaining < 1{
+            totallosses += 1
+        }else if currentGame.guessedWord == currentGame.word {
+            totalsWins += 1
+        }else {
+            updateUi()
+        }
+        
+    }
     
     /// updating ImageView with button click (обновление ImageView с нажатием кнопки )
     func updateUi(){
         let movesRemaining = currentGame.inCorrectMovesRemaining
         let imageNumber = (movesRemaining + 64) % 8
         let image = "lamp\(imageNumber)"
-               lampsImageView.image = UIImage(named: image)
+        lampsImageView.image = UIImage(named: image)
         updateCorrectWordLabel()
         statusGameLabel.text = "Выигрыши: \(totalsWins), Проигрыши: \(totallosses)"
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newRound()
     }
-// MARK: IB - Action
+    // MARK: IB - Action
     
     @IBAction func letterButtonsPressed(_ sender: UIButton) {
         sender.isEnabled = false
-       let letter = sender.title(for: .normal)!
+        let letter = sender.title(for: .normal)!
         currentGame.playerGuessed(letter: Character(letter))
-        updateUi() 
+        updateState()
     }
     
 }
